@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "Live Preview",
+			"workspacePath": "c:\\Developer-Code\\Curso-DevClub\\node-exercicio",
+			"problemMatcher": [
+				"$node-sass"
+			],
+			"label": "Live Preview: Executar Servidor"
+		}
+	]
+}
