@@ -1,11 +1,12 @@
 
-
+const cors = require('cors')
 const { request, response, json } = require('express')
 const express = require('express')
 const uuid = require('uuid')
 const port = 3006
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 
 const requests = []
@@ -40,10 +41,13 @@ const verificationRouteAndURL = (request, response, next) => {
 
 app.post('/requests', verificationRouteAndURL, (request, response) => {
 
-    const { clientName, order, price } = request.body
-    const newRequests = { id: uuid.v4(), clientName, order, price, status: "SEU PEDIDO ESTÁ SENDO PREPARADO!" }
+    const { name, order } = request.body
+    const newRequests = { id: uuid.v4(), name, order, status: "SEU PEDIDO ESTÁ SENDO PREPARADO!" }
 
-    requests.push(newRequests)
+    if(name && order !== "") {
+        requests.push(newRequests)
+    }
+
     return response.status(201).json(newRequests)
 
 })
