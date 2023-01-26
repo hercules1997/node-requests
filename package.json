@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "Primeiro exercicio node JS",
   "main": "index.js",
+  "module": "module",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
+    "start": "node ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "dev": "nodemon"
   },
   "author": "Hércules_C_Andrade",
   "license": "ISC",
